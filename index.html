@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Anjali Chauhan, a Computer Science Engineering Student, Java Full Stack Developer, and AI & ML Enthusiast. Explore my projects, skills, education, and achievements.">
+    <meta name="keywords" content="Anjali Chauhan, Portfolio, Computer Science Student, Java Full Stack Developer, AI & ML, B.Tech CSE, Software Engineer, Gesture Recognition, Blockchain">
+    <meta name="author" content="Anjali Chauhan">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anjali Chauhan | Computer Science Student & Developer">
+    <meta property="og:description" content="Portfolio of Anjali Chauhan. B.Tech Computer Science student building web applications and AI-powered solutions.">
+    <meta property="og:image" content="assets/profile.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Anjali Chauhan | Computer Science Student & Developer">
+    <meta property="twitter:description" content="Portfolio of Anjali Chauhan. B.Tech Computer Science student building web applications and AI-powered solutions.">
+    <meta property="twitter:image" content="assets/profile.jpeg">
+
+    <title>Anjali Chauhan | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-container">
+            <div class="loader-glow"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-text">
+                <span class="loading-title">ANJALI CHAUHAN</span>
+                <span class="loading-subtitle">Initializing Workspace...</span>
+            </div>
+            <div class="loader-progress">
+                <div id="loader-bar" class="loader-bar"></div>
+            </div>
+            <div id="loader-percentage" class="loader-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor Glow Effect -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#home" class="logo">AC<span class="dot">.</span></a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#coding-profiles" class="nav-link" data-section="coding-profiles">Profiles</a>
+                <a href="#experience" class="nav-link" data-section="experience">Timeline</a>
+                <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Main Container -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <canvas id="particles-canvas" class="particles-canvas"></canvas>
+            <div class="container hero-container">
+                <div class="hero-content reveal fade-up">
+                    <h1 class="hero-title">Hi, I'm <span class="text-gradient">Anjali Chauhan</span></h1>
+                    <h2 class="hero-subtitle">
+                        <span id="typing-text" class="typing-text"></span><span class="typed-cursor">|</span>
+                    </h2>
+                    <p class="hero-desc">
+                        I love building modern web applications, AI-powered solutions, and solving real-world problems through technology.
+                    </p>
+                    <div class="hero-actions">
+                        <button id="view-resume-btn" class="btn btn-primary" aria-label="Open Resume Viewer">
+                            <span>Download Resume</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Anjalic21" target="_blank" class="hero-social-btn github-glow" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anjali-chauhan-946059295/" target="_blank" class="hero-social-btn linkedin-glow" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 1 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-container reveal fade-in">
+                    <div class="profile-glow-wrapper">
+                        <div class="profile-glow-ring purple-glow"></div>
+                        <div class="profile-glow-ring blue-glow"></div>
+                        <div class="profile-glow-ring cyan-glow"></div>
+                        <div class="profile-image-mask">
+                            <img src="assets/profile.jpeg" alt="Anjali Chauhan Profile" class="profile-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header reveal fade-up">
+                    <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text-content reveal slide-left">
+                        
+                        <p class="about-paragraph">
+                            I'm Anjali Chauhan, a Computer Science Engineering student with a strong passion for building scalable web applications and solving real-world problems through technology. 
+                        </p>
+                        <p class="about-paragraph">
+                            My primary expertise lies in Java, React.js, MySQL, and PostgreSQL, complemented by a solid foundation in Data Structures & Algorithms (DSA). I enjoy designing responsive front-end interfaces, developing robust backend logic, and working with relational databases to create complete full-stack solutions.
+                        </p>
+
+                        <p class="about-paragraph">
+                           Currently, I'm expanding my knowledge in AI/ML and backend development while preparing for software engineering roles. I enjoy taking on challenging projects that strengthen my problem-solving abilities and technical skills.
+                        </p>
+                        
+                        <div class="traits-container">
+                            <div class="trait-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                <span>Problem Solver</span>
+                            </div>
+                            <div class="trait-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                <span>Quick Learner</span>
+                            </div>
+                            <div class="trait-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <span>Team Player</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header reveal fade-up">
+                    <span class="section-tagline"></span>
+                    <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Programming -->
+                    <div class="glass-card skill-category reveal fade-up">
+                        <div class="card-glow purple-glow"></div>
+                        <h3 class="category-title">Programming</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java">
+                                <span>Java</span>
+                            </span>
+
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                                <span>Python</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="glass-card skill-category reveal fade-up" style="animation-delay: 0.1s;">
+                        <div class="card-glow blue-glow"></div>
+                        <h3 class="category-title">Frontend</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+                                <span>HTML5</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+                                <span>CSS3</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
+                                <span>React.js</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="glass-card skill-category reveal fade-up" style="animation-delay: 0.2s;">
+                        <div class="card-glow cyan-glow"></div>
+                        <h3 class="category-title">Backend</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                <span>Node.js</span>
+                            </span>
+                            <span class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <circle cx="6" cy="6" r="3" stroke="#06b6d4" fill="rgba(6, 182, 212, 0.2)"></circle>
+                                    <circle cx="18" cy="18" r="3" stroke="#a855f7" fill="rgba(168, 85, 247, 0.2)"></circle>
+                                    <circle cx="18" cy="6" r="3" stroke="#3b82f6" fill="rgba(59, 130, 246, 0.2)"></circle>
+                                    <line x1="9" y1="6" x2="15" y2="6" stroke="#3b82f6"></line>
+                                    <line x1="6" y1="9" x2="15" y2="15" stroke="#a855f7"></line>
+                                </svg>
+                                <span>REST APIs</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot">
+                                <span>Spring Boot</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="glass-card skill-category reveal fade-up" style="animation-delay: 0.3s;">
+                        <div class="card-glow purple-glow"></div>
+                        <h3 class="category-title">Database</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL">
+                                <span>MySQL</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                <span>PostgreSQL</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="glass-card skill-category reveal fade-up" style="animation-delay: 0.4s;">
+                        <div class="card-glow blue-glow"></div>
+                        <h3 class="category-title">Tools</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                                <span>Git</span>
+                            </span>
+                            <span class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#f3f4f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>GitHub</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code">
+                                <span>VS Code</span>
+                            </span>
+                            <span class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman">
+                                <span>Postman</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Other -->
+                    <div class="glass-card skill-category reveal fade-up" style="animation-delay: 0.5s;">
+                        <div class="card-glow cyan-glow"></div>
+                        <h3 class="category-title">CS Core & Fundamentals</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <circle cx="12" cy="5" r="3" stroke="#a855f7" fill="rgba(168, 85, 247, 0.2)"></circle>
+                                    <circle cx="6" cy="19" r="3" stroke="#06b6d4" fill="rgba(6, 182, 212, 0.2)"></circle>
+                                    <circle cx="18" cy="19" r="3" stroke="#3b82f6" fill="rgba(59, 130, 246, 0.2)"></circle>
+                                    <line x1="10.5" y1="7.5" x2="7.5" y2="16.5" stroke="#06b6d4"></line>
+                                    <line x1="13.5" y1="7.5" x2="16.5" y2="16.5" stroke="#3b82f6"></line>
+                                </svg>
+                                <span>DSA</span>
+                            </span>
+                            <span class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="6" rx="1" stroke="#3b82f6" fill="rgba(59, 130, 246, 0.1)"></rect>
+                                    <rect x="14" y="3" width="7" height="6" rx="1" stroke="#06b6d4" fill="rgba(6, 182, 212, 0.1)"></rect>
+                                    <rect x="8.5" y="15" width="7" height="6" rx="1" stroke="#a855f7" fill="rgba(168, 85, 247, 0.1)"></rect>
+                                    <polyline points="6.5 9 6.5 12 17.5 12 17.5 9" stroke="#3b82f6"></polyline>
+                                    <line x1="12" y1="12" x2="12" y2="15" stroke="#a855f7"></line>
+                                </svg>
+                                <span>OOP</span>
+                            </span>
+                            <span class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3" stroke="#06b6d4" fill="rgba(6, 182, 212, 0.2)"></ellipse>
+                                    <path d="M3 5v7c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="#3b82f6"></path>
+                                    <path d="M3 12v7c0 1.66 4 3 9 3s9-1.34 9-3v-7" stroke="#a855f7"></path>
+                                    <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" stroke="#3b82f6"></path>
+                                </svg>
+                                <span>DBMS</span>
+                            </span>
+                            <span class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="#6b7280"></rect>
+                                    <path d="M3 12h18" stroke="#3b82f6"></path>
+                                    <path d="M12 3v18" stroke="#a855f7"></path>
+                                    <rect x="5" y="5" width="5" height="5" fill="#06b6d4" opacity="0.3"></rect>
+                                    <rect x="14" y="5" width="5" height="5" fill="#3b82f6" opacity="0.3"></rect>
+                                    <rect x="5" y="14" width="5" height="5" fill="#a855f7" opacity="0.3"></rect>
+                                    <rect x="14" y="14" width="5" height="5" fill="#f59e0b" opacity="0.3"></rect>
+                                </svg>
+                                <span>Operating Systems</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header reveal fade-up">
+                    <span class="section-tagline"></span>
+                    <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 (Pragati - AI) -->
+                    <div class="glass-card project-card reveal fade-up">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="project-img-container">
+                            <img src="assets/project_pragati.png" alt="Pragati - AI" class="project-img">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Pragati - AI</h3>
+                            <p class="project-description">Built an AI-powered full-stack platform for fund transparency, grievance management, and citizen–Panchayat interaction. Integrated sentiment analysis, complaint clustering, anomaly detection, and secure multi-level authentication (OTP, face recognition).</p>
+                            <div class="project-techs">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">OpenCV</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/anjalivarshney8923/Pragati" target="_blank" class="btn btn-icon btn-github" aria-label="GitHub Repository">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button class="btn btn-icon btn-features-trigger" aria-label="View Features" data-project-title="Pragati - AI" data-project-features='["Fund transparency, grievance management, and citizen-Panchayat interaction platform", "Integrated Natural Language Processing (NLP) for citizen sentiment analysis", "Intelligent grievance clustering and automated anomaly detection in funds", "Secure multi-level authentication (OTP verification and facial recognition)"]'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                    <span>Features</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>                    <!-- Project 2 (ShareBite) -->
+                    <div class="glass-card project-card reveal fade-up" style="animation-delay: 0.1s;">
+                        <div class="card-glow blue-glow"></div>
+                        <div class="project-img-container">
+                            <img src="assets/project_sharebite.png" alt="ShareBite" class="project-img">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">ShareBite</h3>
+                            <p class="project-description">Developed a full-stack web application connecting users with NGOs to donate surplus food and reduce wastage. Implemented food listing, request management, and real-time coordination features.</p>
+                            <div class="project-techs">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/anjalivarshney8923/ShareBite" target="_blank" class="btn btn-icon btn-github" aria-label="GitHub Repository">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button class="btn btn-icon btn-features-trigger" aria-label="View Features" data-project-title="ShareBite" data-project-features='["Surplus food listing platform connecting local donors and businesses with NGOs", "Real-time automated notification engine to coordinate surplus food pickup requests", "Interactive Google Maps API integration to locate and navigate to nearby NGOs", "Comprehensive user authorization framework separating NGO managers and individual donors"]'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                    <span>Features</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Expense Tracker) -->
+                    <div class="glass-card project-card reveal fade-up" style="animation-delay: 0.2s;">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="project-img-container">
+                            <img src="assets/project_expense.png" alt="Expense Tracker" class="project-img">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Expense Tracker</h3>
+                            <p class="project-description">Developed a personal finance application that tracks daily expenditures, visualizes monthly cash flows, and categorizes transaction histories through interactive analytics dashboards.</p>
+                            <div class="project-techs">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Anjalic21/Expense-Tracker" target="_blank" class="btn btn-icon" aria-label="GitHub Repository">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button class="btn btn-icon btn-features-trigger" aria-label="View Features" data-project-title="Expense Tracker" data-project-features='["Interactive expense tracker visualizing cash flows through customizable charts", "Detailed transaction records categorizing expenditures by tags and types", "Smart goal setup alerting users on category threshold budgets", "Indexed storage providing fast query retrieval and local backup capability"]'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                    <span>Features</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (Gesture Control System) -->
+                    <div class="glass-card project-card reveal fade-up" style="animation-delay: 0.3s;">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="project-img-container">
+                            <img src="assets/project_gesture.png" alt="Gesture Control System" class="project-img">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Gesture Control System</h3>
+                            <p class="project-description">Developed a gesture-based control system enabling hands-free interaction using computer vision. Implemented real-time hand gesture detection & mapping to system actions using OpenCV.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Anjalic21" target="_blank" class="btn btn-icon btn-github" aria-label="GitHub Repository">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button class="btn btn-icon btn-features-trigger" aria-label="View Features" data-project-title="Gesture Control System" data-project-features='["Real-time video capturing and mapping to control OS volume and mouse coordinates", "Precision hand detection utilizing computer vision filtering models", "No hardware dependencies, running entirely via default webcams", "Lightweight control loop pipeline optimized for low processor overhead"]'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                    <span>Features</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Solving & Coding Profiles Section -->
+        <section id="coding-profiles" class="profiles-section">
+            <div class="container">
+                <div class="section-header reveal fade-up">
+                    <span class="section-tagline">COMPETITIVE PROGRAMMING</span>
+                    <h2 class="section-title">Problem Solving & <span class="text-gradient">Coding Profiles</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="profiles-grid">
+                    <!-- CodeChef Card -->
+                    <div class="glass-card profile-card premium-profile-card reveal fade-up">
+                        <div class="card-glow purple-glow"></div>
+                        
+                        <div class="profile-card-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>Verified</span>
+                        </div>
+
+                        <div class="platform-header">
+                            <div class="platform-logo codechef-logo">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 18h12a2 2 0 0 0 2-2v-2a6 6 0 0 0-12 0v2a2 2 0 0 0 2 2z"/>
+                                    <path d="M9 18v2a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2"/>
+                                    <path d="M12 4a3 3 0 0 0-3 3c0 .8.3 1.5.8 2a3 3 0 0 0-.8 2 3 3 0 0 0 6 0 3 3 0 0 0-.8-2c.5-.5.8-1.2.8-2a3 3 0 0 0-3-3z"/>
+                                </svg>
+                            </div>
+                            <div class="platform-info">
+                                <h3 class="platform-name text-gradient">CodeChef</h3>
+                                <span class="platform-username">@anjalic21</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-card-content">
+                            <p class="profile-desc-text">Active competitor on CodeChef, regularly participating in algorithmic contests to refine coding speed, time complexity optimizations, and backend problem-solving strategies.</p>
+                            <div class="profile-meta-tags">
+                                <span class="meta-tag tag-blue">Data Structures</span>
+                                <span class="meta-tag tag-cyan">Algorithms</span>
+                            </div>
+                        </div>
+
+                        <a href="https://www.codechef.com/users/anjalic21" target="_blank" class="btn btn-icon btn-profile-link premium-btn" aria-label="View CodeChef Profile">
+                            <span>View Profile</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="experience" class="timeline-section">
+            <div class="container">
+                <div class="section-header reveal fade-up">
+                    <span class="section-tagline"></span>
+                    <h2 class="section-title">Education <span class="text-gradient"></span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="education-showcase reveal fade-up">
+                    <!-- Left Column: College Spotlight -->
+                    <div class="glass-card education-spotlight">
+                        <div class="card-glow blue-glow"></div>
+                        <span class="education-date">2023 - 2027</span>
+                        <h3 class="education-degree">B.Tech - Computer Science Engineering</h3>
+                        <h4 class="education-school">ABES Institute of Technology</h4>
+                        <p class="education-desc">
+                            Specializing in software engineering architectures, database modeling, and algorithmic design patterns.
+                        </p>
+                        
+                        <!-- GPA Circle Indicator -->
+                        <div class="gpa-card">
+                            <div class="gpa-info">
+                                <span class="gpa-label">Cumulative GPA</span>
+                                <span class="gpa-scale">Scale: 10.0</span>
+                            </div>
+                            <div class="gpa-gauge">
+                                <svg viewBox="0 0 36 36" class="circular-chart blue-gauge">
+                                    <defs>
+                                        <linearGradient id="gpaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="var(--blue)" />
+                                            <stop offset="100%" stop-color="var(--cyan)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke="url(#gpaGradient)" stroke-dasharray="82, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="18" y="20.35" class="percentage">8.2</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Focus Areas & Achievements -->
+                    <div class="education-details-col">
+                        <!-- Key Focus Areas -->
+                        <div class="glass-card education-focus">
+                            <div class="card-glow purple-glow"></div>
+                            <h3 class="details-title">Academic Focus Areas</h3>
+                            <div class="focus-tags">
+                                <span class="focus-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"></circle><circle cx="6" cy="19" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="10.5" y1="7.5" x2="7.5" y2="16.5"></line><line x1="13.5" y1="7.5" x2="16.5" y2="16.5"></line></svg>
+                                    <span>Data Structures & Algorithms</span>
+                                </span>
+                                <span class="focus-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+                                    <span>Database Management Systems</span>
+                                </span>
+                                <span class="focus-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="12" x2="21" y2="12"></line><line x1="12" y1="3" x2="12" y2="21"></line></svg>
+                                    <span>Operating Systems</span>
+                                </span>
+                                <span class="focus-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="6" rx="1"></rect><rect x="14" y="3" width="7" height="6" rx="1"></rect><rect x="8.5" y="15" width="7" height="6" rx="1"></rect><polyline points="6.5 9 6.5 12 17.5 12 17.5 9"></polyline><line x1="12" y1="12" x2="12" y2="15"></line></svg>
+                                    <span>Object Oriented Programming</span>
+                                </span>
+                                <span class="focus-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="18" r="3"></circle><circle cx="18" cy="6" r="3"></circle><line x1="9" y1="6" x2="15" y2="6"></line><line x1="6" y1="9" x2="15" y2="15"></line></svg>
+                                    <span>Computer Networks</span>
+                                </span>
+                                <span class="focus-tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                    <span>Software Engineering</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Academic Honors -->
+                        <div class="glass-card education-honors">
+                            <div class="card-glow cyan-glow"></div>
+                            <h3 class="details-title">Honors & Achievements</h3>
+                            <ul class="honors-list">
+                                <li>
+                                    <span class="honor-icon">🏆</span>
+                                    <div>
+                                        <strong>Hacknovate 7.0</strong>
+                                        <p>Secured a position in the Top 10 teams.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Achievements Section -->
+        <section id="achievements" class="achievements-section">
+            <div class="container">
+                <!-- Achievements Counter Grid -->
+                <div class="counters-grid reveal fade-up">
+                    <div class="counter-card glass-card">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="counter-num text-gradient" data-target="4">0</div>
+                        <div class="counter-label">Projects Completed</div>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <div class="card-glow blue-glow"></div>
+                        <div class="counter-num text-gradient" data-target="5">0</div>
+                        <div class="counter-label">Technologies Mastered</div>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <div class="card-glow cyan-glow"></div>
+                        <div class="counter-num text-gradient" data-target="20">0</div>
+                        <div class="counter-label">Certifications</div>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="counter-num text-gradient" data-target="100">0</div>
+                        <div class="counter-label">DSA Problems Solved</div>
+                    </div>
+                </div>
+
+                <!-- Certifications Grid -->
+                <div class="section-header reveal fade-up" style="margin-top: 5rem;">
+                    <span class="section-tagline"></span>
+                    <h2 class="section-title">Professional <span class="text-gradient">Certifications</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="certifications-grid">
+                    <!-- Certificate 1 -->
+                    <div class="glass-card cert-card reveal fade-up">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="cert-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        </div>
+                        <h3 class="cert-title">Java Developer Certification</h3>
+                        <p class="cert-issuer">Infosys • February 2026</p>
+                        <p class="cert-desc">Validated advanced competency in enterprise Java programming, OOP design principles, multithreading, and server-side logic development.</p>
+                        <a href="#" class="cert-btn" aria-label="View Java Developer Certificate" data-cert-src="assets/infosys_java_developer.pdf" data-cert-title="Java Developer Certification" data-cert-issuer="Infosys • February 2026">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 2 -->
+                    <div class="glass-card cert-card reveal fade-up" style="animation-delay: 0.1s;">
+                        <div class="card-glow blue-glow"></div>
+                        <div class="cert-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3 class="cert-title">Programming using Java</h3>
+                        <p class="cert-issuer">Infosys • June 2025</p>
+                        <p class="cert-desc">Core certification covering Java syntax, control structures, collection frameworks, exception handling, and functional programming basics.</p>
+                        <a href="#" class="cert-btn" aria-label="View Java Programming Certificate" data-cert-src="assets/infosys_programming_java.pdf" data-cert-title="Programming using Java" data-cert-issuer="Infosys • June 2025">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 3 -->
+                    <div class="glass-card cert-card reveal fade-up" style="animation-delay: 0.2s;">
+                        <div class="card-glow cyan-glow"></div>
+                        <div class="cert-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        </div>
+                        <h3 class="cert-title">Advanced Software Engineering Job Simulation</h3>
+                        <p class="cert-issuer">Walmart • March 2026</p>
+                        <p class="cert-desc">Completed practical software architecture tasks, system design modeling, database optimization pipelines, and enterprise-grade deployment simulations.</p>
+                        <a href="#" class="cert-btn" aria-label="View Walmart Software Engineering Simulation Certificate" data-cert-src="assets/walmart_software_engineering.pdf" data-cert-title="Advanced Software Engineering Job Simulation" data-cert-issuer="Walmart • March 2026">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 4 -->
+                    <div class="glass-card cert-card reveal fade-up" style="animation-delay: 0.3s;">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="cert-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+                        </div>
+                        <h3 class="cert-title">Front-End Software Engineering Job Simulation</h3>
+                        <p class="cert-issuer">Skyscanner • March 2026</p>
+                        <p class="cert-desc">Gained hands-on experience building modular UI views, optimizing frontend load performance, and implementing responsive search interfaces using modern JavaScript.</p>
+                        <a href="#" class="cert-btn" aria-label="View Skyscanner Frontend Simulation Certificate" data-cert-src="assets/skyscanner_frontend_engineering.pdf" data-cert-title="Front-End Software Engineering Job Simulation" data-cert-issuer="Skyscanner • March 2026">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 5 -->
+                    <div class="glass-card cert-card reveal fade-up" style="animation-delay: 0.4s;">
+                        <div class="card-glow blue-glow"></div>
+                        <div class="cert-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3 class="cert-title">Prompt Design in Vertex AI</h3>
+                        <p class="cert-issuer">Google Cloud • 2026</p>
+                        <p class="cert-desc">Acquired core skills in engineering high-quality prompts, designing contexts, and applying AI guidelines to generate optimized text outputs using Google Vertex AI APIs.</p>
+                        <a href="#" class="cert-btn" aria-label="View Google Prompt Design Badge" data-cert-src="assets/google_badge_prompt_design.png" data-cert-title="Prompt Design in Vertex AI" data-cert-issuer="Google Cloud • 2026">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 6 -->
+                    <div class="glass-card cert-card reveal fade-up" style="animation-delay: 0.5s;">
+                        <div class="card-glow purple-glow"></div>
+                        <div class="cert-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <h3 class="cert-title">NITTR Industrial Training</h3>
+                        <p class="cert-issuer">NITTR • 2025</p>
+                        <p class="cert-desc">Completed advanced technical and industrial training program covering engineering methodologies, practical system designs, and educational technologies under NITTR guidelines.</p>
+                        <a href="#" class="cert-btn" aria-label="View NITTR Certificate" data-cert-src="assets/nittr_certificate.pdf" data-cert-title="NITTR Industrial Training" data-cert-issuer="NITTR • 2025">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header reveal fade-up">
+                    <span class="section-tagline"></span>
+                    <h2 class="section-title">Contact <span class="text-gradient">Me</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="glass-card contact-form-card reveal fade-up">
+                        <div class="card-glow purple-glow"></div>
+                        <form id="contact-form" class="contact-form" autocomplete="off">
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="e.g., Jane Doe" required>
+                                <span class="input-focus-line"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="e.g., jane.doe@example.com" required>
+                                <span class="input-focus-line"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea id="message" name="message" class="form-input form-textarea" placeholder="Hello Anjali, I would love to..." required></textarea>
+                                <span class="input-focus-line"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Send Message</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <p class="copyright"><span class="heart-pulse"></span></p>
+            <p class="copyright-sub"></p>
+        </div>
+    </footer>
+
+    <!-- Resume Viewer Modal -->
+    <div id="resume-modal" class="resume-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="resume-modal-overlay"></div>
+        <div class="resume-modal-content">
+            <button class="resume-modal-close" id="resume-modal-close" aria-label="Close Resume Viewer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="resume-modal-body">
+                <div class="resume-modal-header">
+                    <span class="resume-modal-tag">RESUME VIEWER</span>
+                    <h3 class="resume-modal-title">Anjali Chauhan - Resume</h3>
+                    <div class="title-underline" style="margin: 0.5rem 0 1.5rem; width: 50px;"></div>
+                </div>
+                <div class="resume-modal-viewer-container" style="width: 100%;">
+                    <iframe id="resume-modal-iframe" src="" frameborder="0" style="width: 100%; height: 65vh; border-radius: var(--border-radius-sm); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); background: #fff;"></iframe>
+                </div>
+                <div class="resume-modal-actions" style="margin-top: 1.5rem; width: 100%; display: flex; justify-content: center;">
+                    <a href="assets/Anjali_Chauhan_Resume.pdf" download="Anjali_Chauhan_Resume.pdf" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <span>Download Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Features Modal -->
+    <div id="features-modal" class="features-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="features-modal-overlay"></div>
+        <div class="features-modal-content">
+            <button class="features-modal-close" id="features-modal-close" aria-label="Close Features Viewer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="features-modal-body">
+                <div class="features-modal-header">
+                    <span class="features-modal-tag">PROJECT SPECS</span>
+                    <h3 id="features-modal-title" class="features-modal-title">Project Title</h3>
+                    <div class="title-underline" style="margin: 0.5rem 0 1.5rem; width: 50px;"></div>
+                </div>
+                <ul id="features-modal-list" class="features-modal-list">
+                    <!-- Dynamic features list items go here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Viewer Modal -->
+    <div id="cert-modal" class="cert-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="cert-modal-overlay"></div>
+        <div class="cert-modal-content">
+            <button class="cert-modal-close" id="cert-modal-close" aria-label="Close Certificate Viewer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="cert-modal-body">
+                <div class="cert-modal-viewer-container" id="cert-modal-viewer-container" style="width: 100%;">
+                    <img id="cert-modal-img" src="" alt="Certificate View" class="hidden">
+                    <iframe id="cert-modal-iframe" src="" frameborder="0" class="hidden" style="width: 100%; height: 70vh; border-radius: var(--border-radius-sm); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); background: #fff;"></iframe>
+                    <div id="cert-modal-loader" class="cert-modal-loader">
+                        <div class="loader-spinner"></div>
+                    </div>
+                </div>
+                
+                <!-- Fallback premium certificate template if image doesn't exist -->
+                <div id="cert-modal-fallback" class="cert-modal-fallback hidden">
+                    <div class="fallback-glow"></div>
+                    <div class="fallback-border-decor"></div>
+                    <div class="fallback-content">
+                        <div class="fallback-header">
+                            <span class="fallback-logo">AC<span class="dot">.</span></span>
+                            <div class="fallback-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <span class="fallback-type">VERIFIED CREDENTIAL</span>
+                        </div>
+                        <h2 class="fallback-title-text">CERTIFICATE OF COMPLETION</h2>
+                        <p class="fallback-recipient-text">This is proudly presented to</p>
+                        <h3 class="fallback-name">Anjali Chauhan</h3>
+                        <p class="fallback-cert-for">for successfully completing the requirements of</p>
+                        <h4 class="fallback-cert-name" id="fallback-cert-name">Certificate Title</h4>
+                        <div class="fallback-footer">
+                            <div class="fallback-meta">
+                                <span class="meta-label">ISSUED BY</span>
+                                <span class="meta-value" id="fallback-meta-issuer">Issuer Name</span>
+                            </div>
+                            <div class="fallback-seal">
+                                <div class="seal-outer"></div>
+                                <div class="seal-inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fallback-instructions">
+                        <p>💡 <strong>Note to developer:</strong> Add your certificate image to the specified path to display it here: <code class="fallback-path-code" id="fallback-path-code">assets/cert_java_developer.png</code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
