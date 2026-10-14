@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="50%" stop-color="#080e1e"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Heatmap Gradient for Grad-CAM -->
+    <radialGradient id="gradcamGlow" cx="45%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#f97316" stop-opacity="0.65"/>
+      <stop offset="65%" stop-color="#eab308" stop-opacity="0.35"/>
+      <stop offset="85%" stop-color="#3b82f6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ResNet Cyan/Purple Gradients -->
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <linearGradient id="purplePink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="280" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Cyber Grid -->
+  <g opacity="0.12" stroke="#38bdf8" stroke-width="0.75">
+    <line x1="0" y1="40" x2="600" y2="40"/>
+    <line x1="0" y1="80" x2="600" y2="80"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="160" x2="600" y2="160"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="60" y1="0" x2="60" y2="280"/>
+    <line x1="140" y1="0" x2="140" y2="280"/>
+    <line x1="220" y1="0" x2="220" y2="280"/>
+    <line x1="300" y1="0" x2="300" y2="280"/>
+    <line x1="380" y1="0" x2="380" y2="280"/>
+    <line x1="460" y1="0" x2="460" y2="280"/>
+    <line x1="540" y1="0" x2="540" y2="280"/>
+  </g>
+
+  <!-- LEFT PANEL: Mammogram + Grad-CAM Heatmap Simulation -->
+  <g transform="translate(35, 35)">
+    <!-- Mammogram Frame -->
+    <rect x="0" y="0" width="130" height="175" rx="8" fill="#050b18" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.2"/>
+    
+    <!-- Breast Tissue Silhouette (Curved Path) -->
+    <path d="M 12 12 Q 115 25 110 120 Q 105 165 12 165 Z" fill="#0d1b33" opacity="0.85"/>
+    <path d="M 20 20 Q 95 35 90 105 Q 85 145 20 148 Z" fill="#13274c" opacity="0.6"/>
+
+    <!-- Localized Grad-CAM Lesion Region -->
+    <ellipse cx="68" cy="92" rx="36" ry="34" fill="url(#gradcamGlow)"/>
+    <circle cx="68" cy="92" r="14" fill="#ef4444" opacity="0.65" filter="url(#neonGlow)"/>
+    <circle cx="68" cy="92" r="6" fill="#fef08a" opacity="0.95"/>
+
+    <!-- Crosshair Target -->
+    <circle cx="68" cy="92" r="28" fill="none" stroke="#f43f5e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.8"/>
+    <line x1="68" y1="58" x2="68" y2="65" stroke="#f43f5e" stroke-width="1.2"/>
+    <line x1="68" y1="119" x2="68" y2="126" stroke="#f43f5e" stroke-width="1.2"/>
+    <line x1="34" y1="92" x2="41" y2="92" stroke="#f43f5e" stroke-width="1.2"/>
+    <line x1="95" y1="92" x2="102" y2="92" stroke="#f43f5e" stroke-width="1.2"/>
+
+    <!-- Sub-label -->
+    <text x="65" y="196" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" letter-spacing="0.5">MAMMOGRAM + GRAD-CAM</text>
+  </g>
+
+  <!-- CONNECTOR PIPELINE: Arrow to ResNet -->
+  <path d="M 175 118 L 205 118" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4,3" opacity="0.8"/>
+  <polygon points="208,118 202,114 202,122" fill="#06b6d4"/>
+
+  <!-- CENTER PANEL: ResNet-50 Feature Extractor -->
+  <g transform="translate(215, 48)">
+    <rect x="0" y="0" width="135" height="142" rx="10" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(6, 182, 212, 0.3)" stroke-width="1.2"/>
+    
+    <!-- Title Header -->
+    <rect x="0" y="0" width="135" height="26" rx="10" fill="rgba(6, 182, 212, 0.12)"/>
+    <text x="67" y="17" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="0.5">RESNET-50 BACKBONE</text>
+
+    <!-- Layer Nodes & Residual Blocks -->
+    <g transform="translate(14, 38)">
+      <!-- Conv Blocks -->
+      <rect x="0" y="5" width="20" height="55" rx="3" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+      <line x1="20" y1="32" x2="34" y2="32" stroke="#a855f7" stroke-width="1.5"/>
+      <rect x="34" y="12" width="22" height="42" rx="3" fill="#1e293b" stroke="#a855f7" stroke-width="1"/>
+      <line x1="56" y1="32" x2="70" y2="32" stroke="#a855f7" stroke-width="1.5"/>
+      <rect x="70" y="18" width="24" height="30" rx="3" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+      
+      <!-- Skip Connection / Residual Arc -->
+      <path d="M 10 5 C 10 -15, 82 -15, 82 18" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.9"/>
+    </g>
+
+    <text x="67" y="122" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">2,048-D Visual Vector</text>
+  </g>
+
+  <!-- CLINICAL METADATA BRANCH (Lower flow into fusion) -->
+  <g transform="translate(215, 204)">
+    <rect x="0" y="0" width="135" height="32" rx="6" fill="rgba(168, 85, 247, 0.08)" stroke="rgba(168, 85, 247, 0.3)" stroke-width="1"/>
+    <text x="67" y="20" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">+ 6 Clinical Metadata Features</text>
+  </g>
+
+  <!-- FUSION PATHWAYS (Converging lines) -->
+  <path d="M 350 119 C 375 119, 375 130, 395 130" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.8"/>
+  <path d="M 350 220 C 375 220, 375 146, 395 146" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.8"/>
+
+  <!-- RIGHT PANEL: Early Multimodal Fusion & Classification Head -->
+  <g transform="translate(400, 58)">
+    <rect x="0" y="0" width="165" height="155" rx="10" fill="rgba(15, 23, 42, 0.85)" stroke="url(#cyanPurple)" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="165" height="28" rx="10" fill="rgba(168, 85, 247, 0.15)"/>
+    <text x="82" y="18" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="0.5">MULTIMODAL FUSION</text>
+
+    <!-- Fused Vector Spec -->
+    <rect x="15" y="38" width="135" height="24" rx="4" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.1)"/>
+    <text x="82" y="54" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">2,054-D FUSED TENSOR</text>
+
+    <!-- Neural Classifier Output Bar -->
+    <g transform="translate(18, 76)">
+      <!-- Benign Class -->
+      <rect x="0" y="0" width="130" height="26" rx="4" fill="rgba(34, 197, 94, 0.08)" stroke="rgba(34, 197, 94, 0.3)" stroke-width="1"/>
+      <text x="12" y="17" fill="#4ade80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600">BENIGN</text>
+      <text x="118" y="17" fill="#4ade80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="end">P(y=0)</text>
+
+      <!-- Malignant Class -->
+      <rect x="0" y="34" width="130" height="26" rx="4" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.3)" stroke-width="1"/>
+      <text x="12" y="51" fill="#f87171" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600">MALIGNANT</text>
+      <text x="118" y="51" fill="#f87171" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="end">P(y=1)</text>
+    </g>
+  </g>
+
+  <!-- TOP BADGES -->
+  <g transform="translate(20, 16)">
+    <rect x="0" y="0" width="110" height="18" rx="9" fill="rgba(56, 189, 248, 0.1)" stroke="rgba(56, 189, 248, 0.3)"/>
+    <text x="55" y="12" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">CBIS-DDSM (3,567)</text>
+  </g>
+
+  <g transform="translate(138, 16)">
+    <rect x="0" y="0" width="145" height="18" rx="9" fill="rgba(168, 85, 247, 0.1)" stroke="rgba(168, 85, 247, 0.3)"/>
+    <text x="72" y="12" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">PATIENT-LEVEL SPLIT</text>
+  </g>
+
+  <g transform="translate(291, 16)">
+    <rect x="0" y="0" width="125" height="18" rx="9" fill="rgba(244, 63, 94, 0.1)" stroke="rgba(244, 63, 94, 0.3)"/>
+    <text x="62" y="12" fill="#fb7185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">EXPLAINABLE AI</text>
+  </g>
+</svg>
